@@ -103,7 +103,25 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
             final LinearLayout linearLayout = (LinearLayout) view;
-
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Do you really want to delete this item?").setTitle("Delete");
+            // Add the buttons
+            builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // User clicked OK button
+                    TextView itemId = (TextView) linearLayout.getChildAt(1);
+                    db.delete(itemId.getText().toString());
+                    updateData();
+                }
+            });
+            builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // User cancelled the dialog
+                }
+            });
+            // Create the AlertDialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
             return true;
         }
     }
