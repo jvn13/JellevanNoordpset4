@@ -37,7 +37,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/todo"
-            android:inputType="textPersonName" />
+            android:inputType="textCapSentences" />
 
         <Button
             android:id="@+id/addButton"

@@ -44,7 +44,7 @@ public class TodoDatabase extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM todos ORDER BY completed", null);
     }
 
-    // A little bit useless to include completed to, because it will always be 0
+
     public void insert(String title, int completed) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();

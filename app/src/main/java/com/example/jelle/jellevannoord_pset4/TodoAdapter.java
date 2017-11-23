@@ -28,6 +28,10 @@ public class TodoAdapter extends ResourceCursorAdapter {
             box.setChecked(true);
             name.setPaintFlags(name.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             name.setTextColor(MainActivity.resources.getColor(R.color.secondaryText));
+        } else {
+            box.setChecked(false);
+            name.setPaintFlags(name.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+            name.setTextColor(MainActivity.resources.getColor(R.color.primaryText));
         }
         box.setOnClickListener(new MainActivity.checkBoxListener());
     }
