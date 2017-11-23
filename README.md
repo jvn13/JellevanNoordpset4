@@ -1,5 +1,6 @@
-# To do app
 [![BCH compliance](https://bettercodehub.com/edge/badge/jvn13/JellevanNoordpset4?branch=master)](https://bettercodehub.com/)
+# To do app
+
 ## About
 
 A To do app where you are able to add, mark done and delete items. Tnis app uses a database to store the items.
